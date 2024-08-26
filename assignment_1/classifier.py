@@ -14,7 +14,9 @@ def getSkynet():
 
 #takes variables X and classifies the animal
 def classify_animal(*X):
+    #formats input so that its correct in case its wrong
     if len(X) == 1: X = X[0]
+    #runs input through ai and returns output
     return getSkynet().predict([X])
 
 if __name__ == "__main__":

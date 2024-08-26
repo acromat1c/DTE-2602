@@ -45,6 +45,7 @@ def test_classifier():  # 1p
         if classifier.classify_animal(*features) == class_int:
             n_correct_classifications += 1
     assert n_correct_classifications > 5
+    # everythin below was added by me
     if n_correct_classifications > 5: print("success", n_correct_classifications, "/", len(data_test))
     else: print("not success", n_correct_classifications, "/", len(data_test))
 
