@@ -21,6 +21,8 @@ def classify_animal(*X):
     #runs input through ai and returns output
     return getSkynet().predict(X)
 
+
+# lets you manualy enter data if you run the file
 if __name__ == "__main__":
     inp= []
     for i in ["hair", "feathers", "eggs", "milk", "airborne", "aquatic", "predator", "toothed", "backbone", "breathes", "venomous", "fins", "legs", "tail", "domestic", "catsize"]:
