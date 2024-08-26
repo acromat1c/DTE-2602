@@ -127,7 +127,7 @@ import pickle
 # exports the dictionary with the training data
 
 def exportTrainingData():
-    with open ('traningData', 'wb') as td:
+    with open ('trainingData', 'wb') as td:
         pickle.dump(data_train, td)
 
 # re-exports the dictionery if the file is run.
