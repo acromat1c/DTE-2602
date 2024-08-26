@@ -11,7 +11,7 @@ def createSkynet():
 
     # retrives the training data and formates it into a 2d array [[X][y]]
 
-    with open('traningData', 'rb') as td:
+    with open('trainingData', 'rb') as td:
         trainingData = pickle.load(td)
     trainingData = [[trainingData[i][:-1] for i in trainingData],[trainingData[i][-1] for i in trainingData]]
 
