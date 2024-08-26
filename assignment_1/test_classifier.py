@@ -42,8 +42,12 @@ data_test = (
 def test_classifier():  # 1p
     n_correct_classifications = 0
     for features, class_int in data_test:
-        if classifier.classify_animal(features) == class_int:
+        if classifier.classify_animal(*features) == class_int:
             n_correct_classifications += 1
     assert n_correct_classifications > 5
     if n_correct_classifications > 5: print("success", n_correct_classifications, "/", len(data_test))
     else: print("not success", n_correct_classifications, "/", len(data_test))
+
+
+if __name__ == "__main__":
+    test_classifier()

@@ -13,7 +13,8 @@ def getSkynet():
         return pickle.load(sn)
 
 #takes variables X and classifies the animal
-def classify_animal(X):
+def classify_animal(*X):
+    if len(X) == 1: X = X[0]
     return getSkynet().predict([X])
 
 if __name__ == "__main__":
