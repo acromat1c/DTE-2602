@@ -9,7 +9,7 @@ def createSkynet():
         import data
         data.exportTrainingData()
 
-    # retrives the training data and formates it into a 2d array [[X][y]]
+    # retrives the training data and formates it into a 2d array [[input], [expected_output]]
 
     with open('trainingData', 'rb') as td:
         trainingData = pickle.load(td)
