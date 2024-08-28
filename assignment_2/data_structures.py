@@ -1,11 +1,11 @@
 # Imports
 from __future__ import annotations  # Needed for typing Node class
 
-import warnings
+#import warnings
 from typing import Any
 
-import binarytree
-import heapdict
+#import binarytree
+#import heapdict
 
 
 # Node class (do not change)
@@ -20,38 +20,47 @@ class Node:
 
 class Stack:
     def __init__(self):
-        """Initialize stack object, with head attribute"""
-        pass
+        self.head = None
 
     def push(self, data: Any) -> None:
-        """Add new node with data to stack"""
-        pass
+        if self.head is None:
+            self.head = Node(data=data)
+            return
+        node = Node(data = data, next = self.head)
+        self.head = node
+            
 
     def peek(self) -> Node | None:
-        """Return data from node on top of stack, without changing stack"""
-        pass
+        return self.head.data
 
     def pop(self) -> Node:
-        """Remove last added node and return its data"""
-        pass
+        if self.head == None:
+            raise IndexError
+            return
+        self.head = self.head.next
 
 
 class Queue:
     def __init__(self):
-        """Initialize queue object with head and tail"""
-        pass
+        self.head = None
+        self.tail = None
 
     def enqueue(self, data: Any) -> None:
-        """Add node with data to queue"""
-        pass
+        if self.tail == None:
+            self.tail = [Node(data=data)]
+            self.head = [Node(data=data,next=self.tail)]
+            return
+        self.tail[0].next = [Node(data=data)]
+        self.tail = self.tail[0].next
 
     def peek(self) -> Node | None:
-        """Return data from head of queue without changing the queue"""
-        pass
+        return self.head.data
 
     def dequeue(self) -> Node:
-        """Remove node from head of queue and return its data"""
-        pass
+        if self.head == None:
+            raise IndexError
+            return
+        self.head = self.head[0].next
 
 
 class EmergencyRoomQueue:
@@ -118,3 +127,18 @@ class BinarySearchTree:
         """Return string representation of tree (helper function for debugging)"""
         if self.root is not None:
             return str(self.root)
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    n = Stack()
+    for i in [1,2,3,4,5,6,7,8,9,10]:    
+        n.push(i)
