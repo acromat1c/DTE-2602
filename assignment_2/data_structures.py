@@ -107,7 +107,7 @@ class BinarySearchTree:
 
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #n = Queue()
     #for i in [1,2,3,4,5,6,7,8,9,10]:    
         #n.enqueue(i)
@@ -119,11 +119,11 @@ if __name__ == "__main__":
     # c.add_patient_with_priority("Lack",9)
     # c.update_patient_priority("lack", 2)
     # c.get_next_patient()
-    h = BinarySearchTree(7)
-    h.insert(5)
-    h.insert(9)
-    h.insert(1)
-    h.insert(2)
-    h.insert(8)
-    h.insert(4)
-    print(h)
+    #h = BinarySearchTree(7)
+    #h.insert(5)
+    #h.insert(9)
+    #h.insert(1)
+    #h.insert(2)
+    #h.insert(8)
+    #h.insert(4)
+    #print(h)
