@@ -1,0 +1,21 @@
+strict graph {
+	A [label=A]
+	B [label=B]
+	C [label=C]
+	D [label=D]
+	E [label=E]
+	F [label=F]
+	G [label=G]
+	H [label=H]
+	A -- D
+	B -- G
+	C -- E
+	C -- G
+	D -- E
+	D -- F
+	D -- H
+	D -- G
+	E -- G
+	E -- H
+	G -- H
+}
