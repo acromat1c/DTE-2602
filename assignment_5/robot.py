@@ -143,3 +143,8 @@ class Robot:
         # checks if goal has been reached
         if self.has_reached_goal():
             self.adjustTable()
+
+if __name__ == "__main__":
+    R = Robot()
+    print(R.monte_carlo_exploration())
+    print(R.q_learning)
