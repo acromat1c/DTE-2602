@@ -25,7 +25,6 @@ class Robot:
         # moves robot back to start
         self.x = 3
         self.y = 0
-
         #resets list of visited squeres
         self.visited = []
     
@@ -66,6 +65,17 @@ class Robot:
 
 
 
+    def adjustTable(self):
+        # calculates the score for the path the robot has taken
+        score = sum([self.map[i[0]][i[1]] for i in self.visited])
+        # assign squeres a value based on how good of an option moving to them is
+        for i in self.visited:
+            l = len(self.visited)
+            if score < self.Table[i[0]][i[1]]:
+                self.Table[i[0]][i[1]] = score
+
+
+
     def monte_carlo_exploration(self):
         # each loop in the for loop is equivelent to one trip from start to finish for the robot
         for _ in range(self.Episodes):
@@ -79,13 +89,7 @@ class Robot:
                 self.visited.append([self.x,self.y])
                 # ends loop if robot reaches goal
                 if self.has_reached_goal(): break
-            # calculates the score for the path the robot has taken
-            score = sum([self.map[i[0]][i[1]] for i in self.visited])
-            # assign squeres a value based on how good of an option moving to them is
-            for i in self.visited:
-                l = len(self.visited)
-                if score < self.Table[i[0]][i[1]]:
-                    self.Table[i[0]][i[1]] = score
+            self.adjustTable()
         # returnes that table
         return self.Table
 
@@ -120,10 +124,7 @@ class Robot:
             # calculates the score for the path the robot has taken
             score = sum([self.map[i[0]][i[1]] for i in self.visited])
             # assign squeres a value based on how good of an option moving to them is
-            for i in self.visited:
-                l = len(self.visited)
-                if score < self.Table[i[0]][i[1]]:
-                    self.Table[i[0]][i[1]] = score
+            self.adjustTable()
         # run one last loop without any random variation and returns the best path that has been found
         while True:
             self.x,self.y = self.get_next_state_eg(explore=False)
@@ -141,10 +142,4 @@ class Robot:
         self.visited.append([self.x,self.y])
         # checks if goal has been reached
         if self.has_reached_goal():
-            # calculates the score for the path the robot has taken
-            score = sum([self.map[i[0]][i[1]] for i in self.visited])
-            # assign squeres a value based on how good of an option moving to them is
-            for i in self.visited:
-                l = len(self.visited)
-                if score < self.Table[i[0]][i[1]]:
-                    self.Table[i[0]][i[1]] = score
+            self.adjustTable()
