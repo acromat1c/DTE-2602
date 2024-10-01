@@ -128,8 +128,7 @@ class Robot:
         # run one last loop without any random variation and returns the best path that has been found
         while True:
             self.x,self.y = self.get_next_state_eg(explore=False)
-            if [self.x,self.y] not in self.visited: 
-                self.visited.append([self.x,self.y])
+            self.visited.append([self.x,self.y])
             if self.has_reached_goal():
                 return self.visited
 
