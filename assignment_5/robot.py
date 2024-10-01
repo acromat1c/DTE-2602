@@ -13,7 +13,7 @@ class Robot:
         self.Episodes = 1000
 
         # sets up new q learn Table
-        self.Table = [ [9999 for j in self.map[0]] for i in self.map]
+        self.Table = [ [j*1000 for j in self.map[0]] for i in self.map]
 
         # sets the goal coordinates
         self.finishX = 0
