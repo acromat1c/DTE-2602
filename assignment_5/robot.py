@@ -39,6 +39,7 @@ class Robot:
     def get_x(self):
         # returns x
         return self.x
+        
     def get_y(self):
         # returns y
         return self.y
