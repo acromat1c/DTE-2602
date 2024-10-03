@@ -11,7 +11,7 @@ class Robot:
         # determins number of iterations for monte carlo and q learn
         self.Episodes = Episodes
         # sets up new q learn Table
-        self.Table = [ [1000 for j in self.map[0]] for i in self.map]
+        self.Table = [ [j*1000 for j in self.map[i]] for i,_ in enumerate(self.map)]
         # sets the goal coordinates
         self.finishX = 0
         self.finishY = 5
